@@ -1,7 +1,8 @@
 import { create } from "zustand";
 import axios from "axios";
 
-const API_URL = "http://localhost:4000/api/auth";
+const API_URL = import.meta.env.MODE === "development" ? "/api/auth" : "/api/auth";
+
 
 axios.defaults.withCredentials = true; // will put cookies
 
